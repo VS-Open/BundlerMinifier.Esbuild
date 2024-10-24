@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="README.md" Pack="true" PackagePath="\" />
     <None Include="..\img\*" Pack="true" PackagePath="img\" />
     <None Include="BundlerMinifier.Esbuild.targets" Pack="true" PackagePath="build\" />
     <None Include="scripts\**\*" Exclude="scripts\node_modules\**" Pack="true" PackagePath="BundlerMinifierEsbuild_Scripts\" />
