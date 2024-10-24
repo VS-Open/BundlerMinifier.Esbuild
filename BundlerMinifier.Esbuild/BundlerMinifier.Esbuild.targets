@@ -1,0 +1,16 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="RunBundlerMinifierEsbuild" BeforeTargets="Build">
+    <PropertyGroup>
+      <BundlerMinifierEsbuild_ScriptsPath>$(MSBuildThisFileDirectory)../BundlerMinifierEsbuild_Scripts</BundlerMinifierEsbuild_ScriptsPath>
+    </PropertyGroup>
+
+    <Exec Command="node --version" ContinueOnError="false" StandardOutputImportance="low">
+      <Output TaskParameter="ExitCode" PropertyName="NodeJsExitCode" />
+    </Exec>
+    <Error Condition="'$(NodeJsExitCode)' != '0'" Text="Node.js is not installed or not available in PATH." />
+
+    <Exec Command="npm install" WorkingDirectory="$(BundlerMinifierEsbuild_ScriptsPath)" StandardOutputImportance="low" />
+    <Exec Command="node $(BundlerMinifierEsbuild_ScriptsPath)\processBundles.js"
+          WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+</Project>

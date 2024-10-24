@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>BundlerMinifier.Esbuild</PackageId>
+    <Version>0.2.0</Version>
+    <Authors>VS-Open</Authors>
+    <Description>NuGet package for bundling and minifying files from bundleconfig.json using esbuild.</Description>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <Copyright>Copyright $([System.DateTime]::Now.Year)</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>img/bundler-minifier-esbuild.png</PackageIcon>
+    <PackageTags>csharp;dotnet;concat;bundle;minify;minification;css;js</PackageTags>
+    <PackageProjectUrl>https://github.com/VS-Open/BundlerMinifier.Esbuild</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\img\*" Pack="true" PackagePath="img\" />
+    <None Include="BundlerMinifier.Esbuild.targets" Pack="true" PackagePath="build\" />
+    <None Include="scripts\**\*" Exclude="scripts\node_modules\**" Pack="true" PackagePath="BundlerMinifierEsbuild_Scripts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="nupkg\" />
+  </ItemGroup>
+</Project>

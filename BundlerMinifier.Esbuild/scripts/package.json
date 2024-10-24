@@ -1,0 +1,14 @@
+{
+  "name": "bundlerminifier-esbuild",
+  "version": "1.0.0",
+  "description": "Script for bundling and minifying files using esbuild.",
+  "main": "processBundles.js",
+  "type": "module",
+  "scripts": {
+    "build": "node processBundles.js"
+  },
+  "dependencies": {
+    "esbuild": "^0.24.0",
+    "glob": "^11.0.0"
+  }
+}
