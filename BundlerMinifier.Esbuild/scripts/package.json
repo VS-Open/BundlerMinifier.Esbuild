@@ -8,7 +8,7 @@
     "build": "node processBundles.js"
   },
   "dependencies": {
-    "esbuild": "^0.27.3",
+    "esbuild": "^0.28.0",
     "glob": "^11.1.0"
   }
 }
